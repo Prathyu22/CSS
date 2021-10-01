@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model - Padding</title>
+    <title>Parent-Child Div(Units)</title>
     <style>
-        .background{
-            background-color:coral;
-            width: 200px;
-            height: 200px;
-            box-sizing: border-box;
-            /*whether it is content-box or not mentioned, the same result is seen.*/
-            
-            padding-left:50px;
-            padding-right:50px;
-            padding-top:50px;
-            padding-bottom:50px;
-            /*padding: 50px 50px 50px 50px;*/
+        *{
+            padding:0px;
+            margin:0px;
+            box-sizing: content-box;
+        }
+        .parent{
+            background-color:crimson;
+            width:40vw;
+            height:60px;
+            padding: 20px
+        }
+        .child{
+            background-color:darkgreen;
+            height:30px;
+            width:100%;
         }
     </style>
 </head>
 <body>
-    <div class="background">
-        <p><b>Padding</b></p>
+    <div class="parent">
+        <div class="child"></div>
     </div>
 </body>
 </html>
