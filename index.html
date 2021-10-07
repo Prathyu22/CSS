@@ -4,47 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pseudo Selectors</title>
+    <title>Transition</title>
     <style>
-         h1{
-            background-color:darkgrey;
-            color:black;
-        }        
-        h1:hover{
-            background-color:deeppink;
-            color:indigo;
-            
-        }
-        input:focus{
-            width:100px;
-            height:100px;
-            background-color:goldenrod;
-            color:indigo;
-        }
-        button{
-            background-color:lightseagreen;
-            color:black;
-        }
-        button:focus{
-            background-color:lightcoral;
-        }
-        div::selection{
-            color:darkorange;
-            background-color:cyan;
-        }
-        div{
-            padding:10px;
-            margin:10px;
-            background-color:khaki;
-            color:black;
-            width:200px;
-        }
+         div.parent{
+             background-color:darkviolet;
+             min-height:250px;
+         }
+         div.child{
+             background-color:fuchsia;
+             height:100px;
+             width:100px;
+             border-radius:50%;
+             transition-duration: 0.5s;
+             transition-timing-function:linear;
+         }
+         div.parent:hover div.child{
+             background-color:greenyellow;
+             transform:rotateX(180deg);/*here rotateX property only works*/
+             transform:scale(0.4);/*here only scale property works*/
+             transform:translateX(400px);/*here translateX property only works*/
+             transform:translateY(400px);/*here translateY property only works*/
+
+         }
     </style>
 </head>
 <body>
-    <h1>Psudeo Selectors</h1>
-    <input type="textarea" placeholder="Type here" />
-    <button>Click me</button>
-    <div>Hover me to see the change</div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
 </body>
 </html>
