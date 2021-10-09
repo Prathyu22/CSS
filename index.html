@@ -11,24 +11,41 @@
             margin:0;
         }
         div.parent{
-            background-color:darkslategray;
-            color:floralwhite;
-            font-size:2rem;
+            background-color:black;
+            display:flex;
+            align-items:stretch;
+            height:400px;
         }
-        @media (max-width: 500px){
-            div.parent{
-                background-color:green;
-                color:gold;
+        div.sidebar{
+            background-color:hotpink;
+            flex-basis:20%;
+        }
+        div.child{
+            background-color:greenyellow;
+            flex-basis: 80%;
+        }
+        @media(max-width: 500px){
+            div.sidebar{
+                animation: 3s expand linear infinite;
+            }
+            div.child{
+                flex-basis:100%;
+            }
+        }
+        @keyframes expand{
+            0%{
+                flex-basis: 0%;
+            }
+            100%{
+                flex-basis:50%;
             }
         }
     </style>
 </head>
 <body>
     <div class="parent">
-        <h1>Media Queries</h1>
-        Media queries are a popular technique for delivering a tailored style sheet to different devices.
-        Media queries can also be used to change layout of a page depending on the orientation of the browser.
-        You can have a set of CSS properties that will only apply when the browser window is wider than its height, a so called "Landscape" orientation.
+        <div class="sidebar"></div>
+        <div class="child"></div>
     </div>
 </body>
 </html>
